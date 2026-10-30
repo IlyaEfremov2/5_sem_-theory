@@ -56,12 +56,14 @@ void insertionSort(vector<int>& arr, long long& comp, long long& assign) {
             ++assign;
         }
 
-        if (left < i) {
-            arr[left] = key;
+        if (left < i) 
+        {
+            arr.erase(arr.begin() + i);
+            ++assign;
+
+            arr.insert(arr.begin() + left, key);
             ++assign;
         }
-    }
-}
 
 void hoareSortExtraMemory(vector<int>& arr, long long& comp, long long& assign) {
     if (arr.size() <= 1) {
